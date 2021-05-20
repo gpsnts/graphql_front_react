@@ -24,3 +24,12 @@ export const DELETE_USER = gql`
   	}
 	}
 `;
+
+export const UPDATE_USER = gql`
+	mutation UpdateUser($id: ID, $new_name: String, $new_username: String) {
+		updateUser(id: $id, new_name: $new_name, new_username: $new_username) {
+			status,
+  		count
+		}
+	}
+`;

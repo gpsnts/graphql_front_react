@@ -6,6 +6,7 @@ import "./styles/index.css"
 import CreateUser from './components/CreateUser';
 import GetUsers from './components/GetUsers';
 import DeleteUser from './components/DeleteUser';
+import UpdateUser from './components/UpdateUser';
 
 function App() {
 	const gliderRef = useRef(null);
@@ -30,6 +31,7 @@ function App() {
 						<CreateUser />
 						<GetUsers />
 						<DeleteUser />
+						<UpdateUser />
       		</Glide>
 				</div>
 			</ApolloProvider>

@@ -59,7 +59,7 @@ function GetUsers() {
 						<h1>Users recentes (últimos 5)</h1>
 					</div>
 					<div className="col-md-6 hidden-block">
-						{ setTimeout(function() { refetch(); }, 10000) }
+						{ setTimeout(function() { refetch(); }, 5000) }
 					</div>
 				</div>
 				{data && fetch_list.length > 0 && fetch_list }

@@ -2,8 +2,39 @@
 	background-color: var(--global-color-pallete-4);
 	padding: 15px 25px;
 	border-radius: 5px;
+	border: solid 2.5px black;
 }
 
 .created-user-form__input {
 	margin: 5px 0;
+}
+
+/* .created-user-form__input */
+.created-user-form__input::-webkit-input-placeholder,
+.created-user-form__input::-moz-placeholder,
+.created-user-form__input::-ms-input-placeholder {
+	font-weight: bold;
+	color: black;
+}
+
+.created-user-form__submit {
+	font-weight: bold;
+	background-color: var(--global-color-pallete-3);
+	border: solid 1.5px black;
+}
+
+.created-user-data, .created-user-error {
+	padding: 10px;
+	border-radius: 5px;
+	border: solid 2.5px black;
+	background-color: var(--global-color-pallete-1);
+}
+
+b,
+.created-user-data__name_key, .created-user-data__name_value,
+.created-user-data__username_key, .created-user-data__username_value,
+.created-user-data__password_key, .created-user-data__password_value,
+.created-user-data__behaviour_key, .created-user-data__behaviour_value
+{
+	font-weight: bold;
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useMutation } from '@apollo/client';
-import { Button, Spinner } from 'react-bootstrap'
 import { CREATE_USER } from '../graphql/mutations';
 
 function CreateUser() {
@@ -39,27 +38,8 @@ function CreateUser() {
 	return (
 		<div className="created-user container-fluid d-flex">
 			<div className="col-md-4"></div>
-			<div className="created-user-form col-md-4">
-				<input className="created-user-form__input form-control" type="text" placeholder="Name" 			onChange={ e => setName(e.target.value)} />
-				<input className="created-user-form__input form-control" type="text" placeholder="Username" 	onChange={ e => setUsername(e.target.value)} />
-				<input className="created-user-form__input form-control" type="text" placeholder="Password" 	onChange={ e => setPassword(e.target.value) } />
-				<input className="created-user-form__input form-control" type="text" placeholder="Behaviour" 	onChange={ e => setBehaviour(e.target.value) } />
-						
-				<input
-					className="btn btn-primary mb-2"
-					type="submit"
-					value="Submit"
-					onClick={ _ => handle_creation() }
-				/>
-
-				{
-					error &&
-					<div className="created-user-error">
-						<b className="created-user-error__error">ERROR</b>
-					</div>
-				}
-				
-				{	result &&
+			<div className="created-user-form container col-md-4">
+			{	result &&
 					<div className="created-user-data">
 						<div className="created-user-data__name">
 							<span className="created-user-data__name_key">Nome: </span>
@@ -82,6 +62,26 @@ function CreateUser() {
 						</div>
 					</div>
 				}
+
+				{
+					error &&
+					<div className="created-user-error">
+						<b className="created-user-error__error">Não foi possível criar o User</b>
+					</div>
+				}
+
+				<input className="created-user-form__input form-control" type="text" placeholder="Name" 			onChange={ e => setName(e.target.value)} />
+				<input className="created-user-form__input form-control" type="text" placeholder="Username" 	onChange={ e => setUsername(e.target.value)} />
+				<input className="created-user-form__input form-control" type="text" placeholder="Password" 	onChange={ e => setPassword(e.target.value) } />
+				<input className="created-user-form__input form-control" type="text" placeholder="Behaviour" 	onChange={ e => setBehaviour(e.target.value) } />
+						
+				<input
+					className="btn btn-dark created-user-form__submit col-md-12"
+					type="submit"
+					value="Submit"
+					onClick={ _ => handle_creation() }
+				/>
+				
 			</div>
 			<div className="col-md-4"></div>
 		</div>

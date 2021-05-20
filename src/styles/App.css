@@ -1,3 +1,16 @@
-html, .app-container {
+html, body, #root, .app-container {
+	height: 100% !important;
 	background-color: var(--global-color-pallete-6);
+}
+
+h1 {
+	color: black;
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: 10px;
+}
+
+.hidden-block {
+	display: none;
+	background-color: red;
 }

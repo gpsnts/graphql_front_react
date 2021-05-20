@@ -6,8 +6,7 @@ function CreateUser() {
 	const [name, setName] = useState(""),
 				[username, setUsername] = useState(""),
 				[password, setPassword] = useState(""),
-				[behaviour, setBehaviour] = useState(""),
-				[fetching, setFetching] = useState(undefined);
+				[behaviour, setBehaviour] = useState("");
 
 	const [createUser, { error, data }] = useMutation(CREATE_USER);
 
@@ -36,11 +35,17 @@ function CreateUser() {
 	if (data) 	result = { ...data.createUser };
 
 	return (
-		<div className="created-user container-fluid d-flex">
+		<div className="created-user container-fluid">
 			<div className="col-md-4"></div>
-			<div className="created-user-form container col-md-4">
+			<div className="created-user-form container col-md-4 col">
+				<h1>Criação de User</h1>
 			{	result &&
 					<div className="created-user-data">
+						<div className="created-user-data__name">
+							<span className="created-user-data__name_key">Tipo: </span>
+							<span className="created-user-data__name_value">{result.__typename}</span>
+						</div>
+
 						<div className="created-user-data__name">
 							<span className="created-user-data__name_key">Nome: </span>
 							<span className="created-user-data__name_value">{result.name}</span>

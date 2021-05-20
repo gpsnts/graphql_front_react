@@ -1,0 +1,9 @@
+.created-user-form {
+	background-color: var(--global-color-pallete-4);
+	padding: 15px 25px;
+	border-radius: 5px;
+}
+
+.created-user-form__input {
+	margin: 5px 0;
+}

@@ -1,0 +1,17 @@
+:root {
+	--global-color-pallete-1: #f6d6bd ;
+	--global-color-pallete-2: #c3a38a;
+	--global-color-pallete-3: #997577;
+	--global-color-pallete-4: #816271;
+	--global-color-pallete-5: #4e495f;
+	--global-color-pallete-6: #20394f;
+	--global-color-pallete-7: #0f2a3f;
+	--global-color-pallete-8: #08141e;
+}
+
+* {
+	font-family: 'Fira Sans', sans-serif !important;
+}
+
+@import "./App.css";
+@import "./CreatedUser.css";

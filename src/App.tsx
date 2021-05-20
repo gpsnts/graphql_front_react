@@ -1,5 +1,7 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+import "./styles/index.css"
 import CreateUser from './components/CreateUser';
 
 function App() {
@@ -11,7 +13,11 @@ function App() {
   return (
 		<>
 			<ApolloProvider client={client}>
-				<CreateUser />
+				<div className="app-container container-fluid">
+					<div className="d-flex container-fluid">
+						<CreateUser />
+					</div>
+				</div>
 			</ApolloProvider>
 		</>
   );

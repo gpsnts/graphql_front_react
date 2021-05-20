@@ -30,8 +30,6 @@ function CreateUser() {
 	}
 
 	let result = undefined;
-	
-	if (error)	result = error;
 	if (data) 	result = { ...data.createUser };
 
 	return (
@@ -39,7 +37,7 @@ function CreateUser() {
 			<div className="col-md-4"></div>
 			<div className="created-user-form container col-md-4 col">
 				<h1>Criação de User</h1>
-			{	result &&
+			{	result && !error &&
 					<div className="created-user-data">
 						<div className="created-user-data__name">
 							<span className="created-user-data__name_key">Tipo: </span>

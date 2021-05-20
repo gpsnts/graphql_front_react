@@ -5,6 +5,7 @@ import Glide from 'react-glidejs';
 import "./styles/index.css"
 import CreateUser from './components/CreateUser';
 import GetUsers from './components/GetUsers';
+import DeleteUser from './components/DeleteUser';
 
 function App() {
 	const gliderRef = useRef(null);
@@ -28,6 +29,7 @@ function App() {
       		>
 						<CreateUser />
 						<GetUsers />
+						<DeleteUser />
       		</Glide>
 				</div>
 			</ApolloProvider>

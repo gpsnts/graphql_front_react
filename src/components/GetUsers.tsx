@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { GET_ALL_USERS } from '../graphql/queries';
 
 function GetUsers() {
-	const { data, error, loading, refetch } = useQuery(GET_ALL_USERS);
+	const { data, refetch } = useQuery(GET_ALL_USERS);
 
 	let fetch_list: any = [];
 	let fetch_data = undefined;
@@ -19,7 +19,7 @@ function GetUsers() {
 
 			<div className="created-user-data__name">
 				<span className="created-user-data__name_key">ID: </span>
-				<span className="created-user-data__name_value">{item.name}</span>
+				<span className="created-user-data__name_value">{item.id}</span>
 			</div>
 			
 			<div className="created-user-data__name">
@@ -48,7 +48,6 @@ function GetUsers() {
 	if (data) {
 		fetch_data = data.getAllUsers.slice(data.getAllUsers.length - 5, data.getAllUsers.length);
 		fetch_data.forEach((el: any) => fetch_list.push(_mapping(el)));
-		console.log("fetch_list", fetch_list);
 	}
 	
 	return (

@@ -7,7 +7,6 @@ function UpdateUser() {
 	const [id, setId] = useState(""),
 				[newName, setNewName] = useState(""),
 				[newUsername, setNewUsername] = useState("");
-	let result = undefined;
 
 	let handle_update = () => {
 		updateUser({

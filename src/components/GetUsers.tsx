@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useQuery } from '@apollo/client';
 import { GET_ALL_USERS } from '../graphql/queries';
 
 function GetUsers() {
 	const { data, refetch } = useQuery(GET_ALL_USERS);
 
+	useEffect(
+		() => {
+			setInterval(() => { refetch(); }, 3000);
+		},
+		[refetch]
+	);
+
 	let fetch_list: any = [];
 	let fetch_data = undefined;
 
 	let _mapping = (item: any) => {
 		return (
-			<div className="created-user-data">
+			<div key={Math.random()} className="created-user-data">
 			
 			<div className="created-user-data__name">
 				<span className="created-user-data__name_key">Tipo: </span>
@@ -46,7 +53,9 @@ function GetUsers() {
 	}
 
 	if (data) {
-		fetch_data = data.getAllUsers.slice(data.getAllUsers.length - 5, data.getAllUsers.length);
+		fetch_data = data.getAllUsers.length >= 5 
+			? data.getAllUsers.slice(data.getAllUsers.length - 5, data.getAllUsers.length)
+			: data.getAllUsers;
 		fetch_data.forEach((el: any) => fetch_list.push(_mapping(el)));
 	}
 	
@@ -58,7 +67,9 @@ function GetUsers() {
 					<div className="col-md-12">
 						<h1>Users recentes (últimos 5)</h1>
 					</div>
-					<div className="hidden-block">{ setTimeout(function() { refetch(); }, 5000) }</div>
+					{/* <div>{ 
+						setInterval(function() { refetch(); }, 5000) && "Refreshing..."
+					}</div> */}
 				</div>
 				{data && fetch_list.length > 0 && fetch_list }
 				{!data && 

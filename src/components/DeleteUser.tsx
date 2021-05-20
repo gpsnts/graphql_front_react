@@ -5,7 +5,6 @@ import { DELETE_USER } from '../graphql/mutations';
 function DeleteUser() {
 	const [deleteUser, { data }] = useMutation(DELETE_USER);
 	const [id, setId] = useState("");
-	let result = undefined;
 	
 	let _valid_length = (arg: string) => {
 		return arg.length > 0;
@@ -16,7 +15,6 @@ function DeleteUser() {
 	let handle_delete = () => {
 		if (_can_send) {
 			deleteUser({ variables: { id } });
-			result = data.deleteUser;
 		}
 	}
 

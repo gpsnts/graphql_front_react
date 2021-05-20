@@ -5,6 +5,13 @@
 	height: 40em;
 }
 
+.created-user-get-users {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50em;
+}
+
 .created-user-form {
 	background-color: var(--global-color-pallete-4);
 	padding: 15px 25px;

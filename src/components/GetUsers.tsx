@@ -51,16 +51,14 @@ function GetUsers() {
 	}
 	
 	return (
-		<div className="created-user container-fluid">
+		<div className="created-user-get-users container-fluid">
 			<div className="col-md-4"></div>
 			<div className="created-user-form container col-md-4 col">
 				<div className="row">
 					<div className="col-md-12">
 						<h1>Users recentes (últimos 5)</h1>
 					</div>
-					<div className="col-md-6 hidden-block">
-						{ setTimeout(function() { refetch(); }, 5000) }
-					</div>
+					<div className="hidden-block">{ setTimeout(function() { refetch(); }, 5000) }</div>
 				</div>
 				{data && fetch_list.length > 0 && fetch_list }
 				{!data && 
